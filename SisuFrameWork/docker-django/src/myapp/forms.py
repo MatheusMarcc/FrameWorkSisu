@@ -5,3 +5,12 @@ class FeedbackForm(forms.ModelForm):
     def clean_user(self):
         user=User.objects.get(id=self._request.user.id)
         return user
+
+
+from .models import Curso
+from django import forms
+
+class CursoForm(forms.ModelForm):
+    class Meta:
+        model = Curso
+        fields = ['nome']

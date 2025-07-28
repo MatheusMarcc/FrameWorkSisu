@@ -1,0 +1,7 @@
+
+<h1>Confirma exclusão do curso "{{ curso.nome }}"?</h1>
+<form method="post">
+  {% csrf_token %}
+  <button type="submit">Sim, excluir</button>
+</form>
+<a href="{% url 'curso_list' %}">Cancelar</a>

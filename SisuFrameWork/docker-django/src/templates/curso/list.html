@@ -1,0 +1,14 @@
+
+<h1>Cursos</h1>
+<a href="{% url 'curso_create' %}">Adicionar novo curso</a>
+<ul>
+  {% for curso in cursos %}
+    <li>
+      {{ curso.nome }} -
+      <a href="{% url 'curso_update' curso.id %}">Editar</a> |
+      <a href="{% url 'curso_delete' curso.id %}">Excluir</a>
+    </li>
+  {% empty %}
+    <li>Nenhum curso cadastrado.</li>
+  {% endfor %}
+</ul>
